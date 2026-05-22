@@ -15,7 +15,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--txt);font-family:var(--sans);min-height:100vh;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(192,132,252,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(192,132,252,.04) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;z-index:0}
-.wrap{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:36px 20px 80px}
+.wrap{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:36px 20px 80px}
 
 header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:24px;gap:12px;flex-wrap:wrap}
 .logo-eye{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--txt3);margin-bottom:5px}
@@ -25,6 +25,7 @@ header{display:flex;align-items:flex-end;justify-content:space-between;margin-bo
 .logo-sub{font-family:var(--mono);font-size:11px;color:var(--txt2);margin-top:5px}
 .badge{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:100px;border:1px solid;background:rgba(192,132,252,.1);border-color:rgba(192,132,252,.3);color:var(--acc)}
 
+/* API bar */
 .api-bar{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:14px 16px;margin-bottom:16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .api-label{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--txt2);white-space:nowrap;flex-shrink:0}
 .api-input{flex:1;min-width:180px;background:var(--s2);border:1px solid var(--bd);border-radius:8px;color:var(--txt);font-family:var(--mono);font-size:12px;padding:8px 12px;outline:none;transition:border-color .2s}
@@ -38,35 +39,35 @@ header{display:flex;align-items:flex-end;justify-content:space-between;margin-bo
 .api-link{font-family:var(--mono);font-size:10px;color:var(--txt3);text-decoration:none;white-space:nowrap}
 .api-link:hover{color:var(--acc2)}
 
-.card{background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:18px;transition:border-color .2s}
+/* Card */
+.card{background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:18px;margin-bottom:14px;transition:border-color .2s}
 .card:hover{border-color:var(--bd2)}
 .card-label{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--txt3);margin-bottom:3px;display:flex;align-items:center;gap:7px}
-.pill{width:6px;height:6px;border-radius:50%;flex-shrink:0}
-.pill-ref{background:var(--acc2)}
-.pill-id{background:var(--acc3)}
+.pill-ref{width:6px;height:6px;border-radius:50%;background:var(--acc2);flex-shrink:0}
 .card-title{font-size:14px;font-weight:700;margin-bottom:4px}
 .card-sub{font-family:var(--mono);font-size:10px;color:var(--txt3);margin-bottom:12px}
 
-.upload-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-@media(max-width:600px){.upload-row{grid-template-columns:1fr}}
-
-.zone{border:1.5px dashed var(--bd2);border-radius:10px;background:var(--s2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:220px;cursor:pointer;transition:border-color .2s,background .2s;position:relative;overflow:hidden}
+/* Zone */
+.zone{border:1.5px dashed var(--bd2);border-radius:10px;background:var(--s2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:240px;cursor:pointer;transition:border-color .2s,background .2s;position:relative;overflow:hidden}
 .zone:hover,.zone.over{border-color:var(--acc);background:rgba(192,132,252,.05)}
 .zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.zone-icon{width:40px;height:40px;border-radius:8px;background:var(--s1);border:1px solid var(--bd2);display:flex;align-items:center;justify-content:center;font-size:20px}
+.zone-icon{width:44px;height:44px;border-radius:10px;background:var(--s1);border:1px solid var(--bd2);display:flex;align-items:center;justify-content:center;font-size:22px}
 .zone-hint{font-family:var(--mono);font-size:11px;color:var(--txt2);text-align:center;line-height:1.6}
-.zone-hint strong{display:block;color:var(--txt);font-size:12px;margin-bottom:2px}
+.zone-hint strong{display:block;color:var(--txt);font-size:13px;margin-bottom:3px}
 
-.preview-wrap{width:100%;min-height:220px;border-radius:10px;background:var(--s2);display:flex;align-items:center;justify-content:center;position:relative;padding:8px}
-.preview-wrap img{max-width:100%;max-height:300px;width:auto;height:auto;display:block;border-radius:6px;object-fit:contain}
+/* Preview */
+.preview-wrap{width:100%;min-height:240px;border-radius:10px;background:var(--s2);display:flex;align-items:center;justify-content:center;position:relative;padding:10px}
+.preview-wrap img{max-width:100%;max-height:360px;width:auto;height:auto;display:block;border-radius:6px;object-fit:contain}
 .preview-over{position:absolute;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;font-family:var(--mono);font-size:11px;color:#fff;border-radius:10px}
 .preview-wrap:hover .preview-over{opacity:1}
 .preview-wrap input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
 
+/* Controls row */
 .ctrl-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-@media(max-width:600px){.ctrl-row{grid-template-columns:1fr}}
+@media(max-width:560px){.ctrl-row{grid-template-columns:1fr}}
 .field-label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--txt2);margin-bottom:8px}
 
+/* Subject type */
 .subj-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .subj-btn{background:var(--s2);border:1px solid var(--bd);border-radius:10px;padding:12px 8px;cursor:pointer;transition:all .15s;text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px}
 .subj-btn:hover{border-color:var(--bd2)}
@@ -76,10 +77,12 @@ header{display:flex;align-items:flex-end;justify-content:space-between;margin-bo
 .subj-btn.active .sl{color:var(--acc)}
 .subj-desc{font-family:var(--mono);font-size:10px;color:var(--txt3);margin-top:8px;line-height:1.6;padding:8px 10px;background:var(--s2);border-radius:8px;border:1px solid var(--bd)}
 
-textarea{width:100%;background:var(--s2);border:1px solid var(--bd);border-radius:10px;color:var(--txt);font-family:var(--mono);font-size:12px;padding:11px 13px;outline:none;transition:border-color .2s;resize:vertical;min-height:88px;line-height:1.65;appearance:none}
+/* Notes */
+textarea{width:100%;background:var(--s2);border:1px solid var(--bd);border-radius:10px;color:var(--txt);font-family:var(--mono);font-size:12px;padding:11px 13px;outline:none;transition:border-color .2s;resize:vertical;min-height:100px;line-height:1.65;appearance:none}
 textarea:focus{border-color:var(--acc)}
 textarea::placeholder{color:var(--txt3)}
 
+/* Generate button */
 .btn-gen{width:100%;background:linear-gradient(130deg,var(--acc),var(--acc2));color:#fff;border:none;border-radius:12px;font-family:var(--sans);font-size:15px;font-weight:700;letter-spacing:-.2px;padding:16px 24px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:transform .15s,box-shadow .15s;box-shadow:0 5px 28px rgba(192,132,252,.22);margin-bottom:16px}
 .btn-gen:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(192,132,252,.32)}
 .btn-gen:active{transform:translateY(0)}
@@ -88,6 +91,7 @@ textarea::placeholder{color:var(--txt3)}
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .spinning{animation:spin .8s linear infinite}
 
+/* Output */
 .out-card{background:var(--s1);border:1px solid var(--bd);border-radius:14px;overflow:hidden}
 .out-head{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid var(--bd);background:var(--s2)}
 .out-title{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--txt2);display:flex;align-items:center;gap:7px}
@@ -118,11 +122,12 @@ footer{margin-top:48px;text-align:center;font-family:var(--mono);font-size:10px;
   <div class="logo">
     <div class="logo-eye">AI Prompt Engineering Tool</div>
     <h1><em>Ref</em><span class="arr">→</span>Prompt Designer</h1>
-    <div class="logo-sub">GPT-4o reads your Ref · outputs ready-to-use prompt</div>
+    <div class="logo-sub">Upload Ref · GPT-4o analyzes it · Get ready-to-use prompt</div>
   </div>
-  <span class="badge">v5.2 · GPT-4o Powered</span>
+  <span class="badge">v5.3 · GPT-4o</span>
 </header>
 
+<!-- API Key -->
 <div class="api-bar">
   <span class="api-label">OpenAI API Key</span>
   <input class="api-input" type="password" id="apiKey" placeholder="sk-proj-..." autocomplete="off">
@@ -131,31 +136,21 @@ footer{margin-top:48px;text-align:center;font-family:var(--mono);font-size:10px;
   <a class="api-link" href="https://platform.openai.com/api-keys" target="_blank">↗ Get key</a>
 </div>
 
-<div class="upload-row">
-  <div class="card">
-    <div class="card-label"><span class="pill pill-ref"></span>Style Reference</div>
-    <div class="card-title">Ref Image <span style="font-family:var(--mono);font-size:10px;color:var(--acc2);font-weight:400">Required</span></div>
-    <div class="card-sub">GPT-4o will analyze this to extract the visual style</div>
-    <div class="zone" id="refZone">
-      <input type="file" id="refInput" accept="image/*">
-      <div class="zone-icon">🎨</div>
-      <div class="zone-hint"><strong>Drop or click to upload</strong>The layout &amp; style to clone</div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-label"><span class="pill pill-id"></span>Subject Identity</div>
-    <div class="card-title">Identity Image <span style="font-family:var(--mono);font-size:10px;color:var(--txt3);font-weight:400">Optional</span></div>
-    <div class="card-sub">The person · animal · product to insert</div>
-    <div class="zone" id="idZone">
-      <input type="file" id="idInput" accept="image/*">
-      <div class="zone-icon">🪪</div>
-      <div class="zone-hint"><strong>Drop or click to upload</strong>Upload to lock subject appearance</div>
-    </div>
+<!-- Ref Image -->
+<div class="card">
+  <div class="card-label"><span class="pill-ref"></span>Style Reference</div>
+  <div class="card-title">Ref Image <span style="font-family:var(--mono);font-size:10px;color:var(--acc2);font-weight:400">Required</span></div>
+  <div class="card-sub">GPT-4o will analyze this image and extract all visual rules to clone</div>
+  <div class="zone" id="refZone">
+    <input type="file" id="refInput" accept="image/*">
+    <div class="zone-icon">🎨</div>
+    <div class="zone-hint"><strong>Drop or click to upload</strong>The layout &amp; style you want to replicate</div>
   </div>
 </div>
 
+<!-- Subject Type + Notes -->
 <div class="ctrl-row">
-  <div class="card">
+  <div class="card" style="margin-bottom:0">
     <label class="field-label">Subject Type</label>
     <div class="subj-grid">
       <button class="subj-btn active" data-val="person" onclick="setSubject(this)">
@@ -171,18 +166,22 @@ footer{margin-top:48px;text-align:center;font-family:var(--mono);font-size:10px;
         <span class="si">📦</span><span class="sl">ADD Product</span>
       </button>
     </div>
-    <div class="subj-desc" id="subjDesc">Lock: face structure, skin tone, hair color & length. Identity preserved. No face copy from Ref.</div>
+    <div class="subj-desc" id="subjDesc">Prompt will describe a human subject. Identity preserved, no face copy from Ref.</div>
   </div>
-  <div class="card">
+  <div class="card" style="margin-bottom:0">
     <label class="field-label">Scene Notes <span style="opacity:.4;font-size:9px">optional</span></label>
-    <textarea id="notes" placeholder="e.g. add crown sticker · warmer smile · keep pearl necklace · brighter lighting..."></textarea>
+    <textarea id="notes" placeholder="e.g. add crown sticker · warmer smile · keep pearl necklace · brighter lighting · specific props..."></textarea>
   </div>
 </div>
 
-<button class="btn-gen" id="genBtn" onclick="generate()">
-  <span class="spark" id="sparkIcon">⚡</span> Generate Prompt
-</button>
+<!-- Generate -->
+<div style="margin-top:14px">
+  <button class="btn-gen" id="genBtn" onclick="generate()">
+    <span class="spark" id="sparkIcon">⚡</span> Generate Prompt
+  </button>
+</div>
 
+<!-- Output -->
 <div class="out-card">
   <div class="out-head">
     <div class="out-title">
@@ -200,21 +199,21 @@ footer{margin-top:48px;text-align:center;font-family:var(--mono);font-size:10px;
   </div>
 </div>
 
-<footer>API key stored in your browser only · routed via Vercel proxy · Ref-to-Prompt Designer</footer>
+<footer>API key stored in your browser only · routed via Vercel proxy to OpenAI · Ref-to-Prompt Designer</footer>
 </div>
 
 <script>
 let subject = 'person';
 let refB64 = null, refMime = null;
-let idB64  = null, idMime  = null;
 
 const subjDescs = {
-  person:  'Lock: face structure, eye shape, skin tone, hair color & length. Identity preserved. No face copy from Ref.',
-  animal:  'Lock: species, breed, fur color & pattern, eye color, facial markings — this specific individual.',
-  image:   'Lock: all physical features of the person or animal shown. Full appearance preserved.',
-  product: 'Lock: exact shape, color, branding, surface texture, material finish. Clearly identifiable.'
+  person:  'Prompt will describe a human subject. Face structure, skin tone, hair preserved. No face copy from Ref.',
+  animal:  'Prompt will describe an animal subject. Species, fur pattern, markings, eye color preserved.',
+  image:   'Prompt will describe the subject from the identity image — person or animal. Full appearance preserved.',
+  product: 'Prompt will describe a product. Exact shape, color, branding, texture preserved.'
 };
 
+// API Key
 function saveKey() {
   const v = document.getElementById('apiKey').value.trim();
   if (!v.startsWith('sk-')) { setApiStatus('Invalid key format', 'err'); return; }
@@ -235,6 +234,7 @@ function setApiStatus(msg, type) {
 }
 loadKey();
 
+// Subject
 function setSubject(btn) {
   document.querySelectorAll('.subj-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
@@ -242,23 +242,24 @@ function setSubject(btn) {
   document.getElementById('subjDesc').textContent = subjDescs[subject];
 }
 
-function setupZone(zoneId, inputId, isRef) {
+// Upload
+function setupZone(zoneId, inputId) {
   const zone  = document.getElementById(zoneId);
   const input = document.getElementById(inputId);
   zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('over'); });
   zone.addEventListener('dragleave', () => zone.classList.remove('over'));
   zone.addEventListener('drop', e => {
     e.preventDefault(); zone.classList.remove('over');
-    if (e.dataTransfer.files[0]) loadImg(zone, e.dataTransfer.files[0], isRef);
+    if (e.dataTransfer.files[0]) loadImg(zone, e.dataTransfer.files[0]);
   });
-  input.addEventListener('change', () => { if (input.files[0]) loadImg(zone, input.files[0], isRef); });
+  input.addEventListener('change', () => { if (input.files[0]) loadImg(zone, input.files[0]); });
 }
-function loadImg(zone, file, isRef) {
+function loadImg(zone, file) {
   const fr = new FileReader();
   fr.onload = e => {
     const dataUrl = e.target.result;
-    if (isRef) { refB64 = dataUrl.split(',')[1]; refMime = file.type || 'image/jpeg'; }
-    else        { idB64  = dataUrl.split(',')[1]; idMime  = file.type || 'image/jpeg'; }
+    refB64 = dataUrl.split(',')[1];
+    refMime = file.type || 'image/jpeg';
     zone.innerHTML = `
       <div class="preview-wrap">
         <img src="${dataUrl}" alt="preview">
@@ -266,14 +267,14 @@ function loadImg(zone, file, isRef) {
         <input type="file" accept="image/*">
       </div>`;
     zone.querySelector('input').addEventListener('change', ev => {
-      if (ev.target.files[0]) loadImg(zone, ev.target.files[0], isRef);
+      if (ev.target.files[0]) loadImg(zone, ev.target.files[0]);
     });
   };
   fr.readAsDataURL(file);
 }
-setupZone('refZone', 'refInput', true);
-setupZone('idZone',  'idInput',  false);
+setupZone('refZone', 'refInput');
 
+// Generate
 async function generate() {
   const key = getKey();
   if (!key) { showMsg('Please enter your OpenAI API key first.', 'err'); return; }
@@ -309,31 +310,22 @@ function setLoading(on) {
 async function callProxy(key) {
   const notes = document.getElementById('notes').value.trim();
   const messages = buildMessages(notes);
-
   const res = await fetch('/api/generate', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ apiKey: key, messages })
   });
-
   const data = await res.json();
   if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
   return data.result || '';
 }
 
 function buildMessages(notes) {
-  const userContent = [];
-
-  userContent.push({ type: 'text', text: 'REF IMAGE — analyze this as the visual style template to clone:' });
-  userContent.push({ type: 'image_url', image_url: { url: `data:${refMime};base64,${refB64}`, detail: 'high' } });
-
-  if (idB64) {
-    userContent.push({ type: 'text', text: 'IDENTITY IMAGE — the subject whose appearance must be locked and preserved:' });
-    userContent.push({ type: 'image_url', image_url: { url: `data:${idMime};base64,${idB64}`, detail: 'high' } });
-  }
-
-  userContent.push({ type: 'text', text: buildInstruction(notes) });
-
+  const userContent = [
+    { type: 'text', text: 'REF IMAGE — analyze this as the visual style template to clone:' },
+    { type: 'image_url', image_url: { url: `data:${refMime};base64,${refB64}`, detail: 'high' } },
+    { type: 'text', text: buildInstruction(notes) }
+  ];
   return [
     { role: 'system', content: buildSystem() },
     { role: 'user',   content: userContent }
@@ -343,20 +335,19 @@ function buildMessages(notes) {
 function buildSystem() {
   return `You are a professional AI image generation prompt engineer. You write precise, stable prompts compatible with Stable Diffusion, Midjourney, DALL-E 3, and Flux.
 
-Your task: carefully analyze the Ref Image, extract its complete visual DNA, then write a ready-to-use generation prompt that recreates that exact style while substituting the subject.
+Your task: carefully analyze the Ref Image, extract its complete visual DNA, then write a ready-to-use generation prompt that recreates that exact style with a new subject inserted.
 
-Writing style — follow these successful examples as your format guide:
+Follow these successful examples as your format guide:
 
 EXAMPLE A (collage style):
-"Create a pink Y2K princess-themed scrapbook collage poster using the uploaded identity image as the main subject. Include multiple cutout portraits of the same subject: one large main close-up portrait centered, plus 4 smaller portrait frames arranged around it. Design it like a kawaii magazine cover with a dreamy and playful vibe. Use a bright solid pink background with layered graphic elements: stars, sparkles, pearl bead strings, hearts, and ribbon bows. Add decorative sticker frames, layered paper cutouts, and die-cut portrait edges. Include 3D bubble-letter headlines in deep pink with white highlight extrusion. Lighting: soft, dreamy, front-facing glow. Style: kawaii, Korean idol magazine, Y2K aesthetic, cute, glossy, highly detailed, 8K. NEGATIVE PROMPT: wrong face, identity drift, extra fingers, blurry, watermark, missing decorations."
+"Create a pink Y2K princess-themed scrapbook collage poster. Include multiple cutout portraits of the same subject: one large main close-up portrait centered, plus 4 smaller portrait frames arranged around it. Design it like a kawaii magazine cover with a dreamy and playful vibe. Use a bright solid pink background with layered graphic elements: stars, sparkles, pearl bead strings, hearts, and ribbon bows. Add decorative sticker frames, layered paper cutouts, and die-cut portrait edges. Include 3D bubble-letter headlines in deep pink with white highlight extrusion. Lighting: soft, dreamy, front-facing glow. Style: kawaii, Korean idol magazine, Y2K aesthetic, cute, glossy, highly detailed, 8K. NEGATIVE PROMPT: wrong face, identity drift, extra fingers, blurry, watermark, missing decorations."
 
 EXAMPLE B (portrait scene style):
-"Based on the provided identity image, place the subject in front of an open kitchen or sushi bar in a high-end Japanese restaurant. The subject faces the camera with a gentle, warm expression. The subject's appearance must closely match the uploaded image with strong likeness priority. Dressed in an elegant Japanese kimono. The subject holds a square wooden bento box containing an artistic food portrait resembling the subject's face. Lighting: bright, premium, warm cinematic. Style: photorealistic, high-end editorial, ultra-detailed, 8K. NEGATIVE PROMPT: wrong face, distorted features, bad anatomy, blurry."
+"Place the subject in front of an open kitchen or sushi bar in a high-end Japanese restaurant. The subject faces the camera with a gentle, warm expression. Dressed in an elegant Japanese kimono. The subject holds a square wooden bento box containing an artistic food portrait resembling the subject's face. Lighting: bright, premium, warm cinematic. Style: photorealistic, high-end editorial, ultra-detailed, 8K. NEGATIVE PROMPT: wrong face, distorted features, bad anatomy, blurry."
 
 Rules:
 - Output ONLY the final prompt text. No explanation, no preamble, no headers, no markdown.
-- Describe exactly what you SEE in the Ref Image and encode those as reproduction rules.
-- Keep identity lock instructions concise but explicit.
+- Describe exactly what you SEE in the Ref Image — layout, colors, background, textures, decorations, typography, lighting, mood, props — and encode those as reproduction rules.
 - End with a compact NEGATIVE PROMPT line.
 - Max 300 words. Every word must serve generation stability.
 - Write in English.`;
@@ -364,15 +355,14 @@ Rules:
 
 function buildInstruction(notes) {
   const subjectMap = {
-    person:  `SUBJECT TYPE: Human person.\n- Closely match the identity image (if provided). Strong likeness priority.\n- Lock: facial bone structure, eye shape, skin undertone, hair color, length, texture.\n- Subtle beautification allowed but identity must stay recognizable.\n- CRITICAL: Do NOT copy any face from the Ref Image.`,
-    animal:  `SUBJECT TYPE: Animal.\n- Closely match the identity image (if provided).\n- Lock: species, breed, fur/coat color and pattern, eye color, facial markings, ear shape.\n- This specific individual — not a generic animal.\n- CRITICAL: Do NOT borrow animal features from the Ref Image.`,
-    image:   `SUBJECT TYPE: Subject from identity image (person or animal).\n- Preserve ALL distinguishing physical features: face, coloring, markings, hair/fur, eye color.\n- No drift, no blending with Ref Image subject.`,
-    product: `SUBJECT TYPE: Product from identity image.\n- Exact fidelity: shape, silhouette, color, branding/logo, surface texture, material finish.\n- Must be immediately recognizable as the same item.`
+    person:  `SUBJECT TYPE: Human person. The prompt should instruct the AI to place a human subject into this style. Include identity preservation instructions: lock face structure, skin tone, hair color and length. No face copy from the Ref Image.`,
+    animal:  `SUBJECT TYPE: Animal. The prompt should instruct the AI to place an animal subject into this style. Include identity preservation: lock species, breed, fur/coat color and pattern, eye color, markings.`,
+    image:   `SUBJECT TYPE: Subject from provided image (person or animal). Include instructions to preserve all physical features: face or fur, coloring, markings, hair/coat texture.`,
+    product: `SUBJECT TYPE: Product. The prompt should feature a product prominently. Include instructions to reproduce exact shape, color, branding, texture, and material finish accurately.`
   };
-
   return `Write the final generation prompt now.
 
-Analyze the Ref Image: extract layout, composition, background, color palette, typography, decorative elements, lighting, mood, props. Encode these as style rules.
+Analyze the Ref Image carefully: extract layout, composition, background, color palette, typography, decorative elements, lighting, mood, and all visual rules. Encode these as the style template.
 
 ${subjectMap[subject]}
 
