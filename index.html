@@ -15,99 +15,98 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--txt);font-family:var(--sans);min-height:100vh;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(192,132,252,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(192,132,252,.04) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;z-index:0}
-.wrap{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:40px 20px 80px}
+.wrap{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:36px 20px 80px}
 
-/* Header */
-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;gap:12px;flex-wrap:wrap}
+header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:24px;gap:12px;flex-wrap:wrap}
 .logo-eye{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--txt3);margin-bottom:5px}
-.logo h1{font-size:26px;font-weight:800;letter-spacing:-.5px}
+.logo h1{font-size:24px;font-weight:800;letter-spacing:-.5px}
 .logo h1 em{color:var(--acc2);font-style:normal}
 .logo h1 .arr{color:var(--txt3);margin:0 5px}
 .logo-sub{font-family:var(--mono);font-size:11px;color:var(--txt2);margin-top:5px}
 .badge{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:100px;border:1px solid;background:rgba(192,132,252,.1);border-color:rgba(192,132,252,.3);color:var(--acc)}
 
-/* Cards */
-.card{background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:20px;transition:border-color .2s}
+.api-bar{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:14px 16px;margin-bottom:16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.api-label{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--txt2);white-space:nowrap;flex-shrink:0}
+.api-input{flex:1;min-width:180px;background:var(--s2);border:1px solid var(--bd);border-radius:8px;color:var(--txt);font-family:var(--mono);font-size:12px;padding:8px 12px;outline:none;transition:border-color .2s}
+.api-input:focus{border-color:var(--acc)}
+.api-input::placeholder{color:var(--txt3)}
+.api-save{font-family:var(--mono);font-size:11px;background:rgba(192,132,252,.12);border:1px solid rgba(192,132,252,.35);color:var(--acc);padding:7px 14px;border-radius:8px;cursor:pointer;white-space:nowrap;transition:all .15s;flex-shrink:0}
+.api-save:hover{background:rgba(192,132,252,.22)}
+.api-status{font-family:var(--mono);font-size:11px;color:var(--txt3);white-space:nowrap;flex-shrink:0}
+.api-status.ok{color:var(--acc3)}
+.api-status.err{color:#f87171}
+.api-link{font-family:var(--mono);font-size:10px;color:var(--txt3);text-decoration:none;white-space:nowrap}
+.api-link:hover{color:var(--acc2)}
+
+.card{background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:18px;transition:border-color .2s}
 .card:hover{border-color:var(--bd2)}
 .card-label{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--txt3);margin-bottom:3px;display:flex;align-items:center;gap:7px}
 .pill{width:6px;height:6px;border-radius:50%;flex-shrink:0}
 .pill-ref{background:var(--acc2)}
 .pill-id{background:var(--acc3)}
-.card-title{font-size:15px;font-weight:700;margin-bottom:12px;letter-spacing:-.1px}
+.card-title{font-size:14px;font-weight:700;margin-bottom:4px}
+.card-sub{font-family:var(--mono);font-size:10px;color:var(--txt3);margin-bottom:12px}
 
-/* Upload */
 .upload-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
 @media(max-width:600px){.upload-row{grid-template-columns:1fr}}
-.zone{border:1.5px dashed var(--bd2);border-radius:10px;background:var(--s2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:160px;cursor:pointer;transition:border-color .2s,background .2s;position:relative;overflow:hidden}
+
+.zone{border:1.5px dashed var(--bd2);border-radius:10px;background:var(--s2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:220px;cursor:pointer;transition:border-color .2s,background .2s;position:relative;overflow:hidden}
 .zone:hover,.zone.over{border-color:var(--acc);background:rgba(192,132,252,.05)}
 .zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
 .zone-icon{width:40px;height:40px;border-radius:8px;background:var(--s1);border:1px solid var(--bd2);display:flex;align-items:center;justify-content:center;font-size:20px}
-.zone-hint{font-family:var(--mono);font-size:11px;color:var(--txt2);text-align:center;line-height:1.5}
+.zone-hint{font-family:var(--mono);font-size:11px;color:var(--txt2);text-align:center;line-height:1.6}
 .zone-hint strong{display:block;color:var(--txt);font-size:12px;margin-bottom:2px}
-.preview-box{width:100%;height:160px;border-radius:8px;overflow:hidden;position:relative}
-.preview-box img{width:100%;height:100%;object-fit:cover;display:block}
-.preview-over{position:absolute;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;font-family:var(--mono);font-size:11px;color:#fff}
-.preview-box:hover .preview-over{opacity:1}
 
-/* Controls row */
+.preview-wrap{width:100%;min-height:220px;border-radius:10px;background:var(--s2);display:flex;align-items:center;justify-content:center;position:relative;padding:8px}
+.preview-wrap img{max-width:100%;max-height:300px;width:auto;height:auto;display:block;border-radius:6px;object-fit:contain}
+.preview-over{position:absolute;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;font-family:var(--mono);font-size:11px;color:#fff;border-radius:10px}
+.preview-wrap:hover .preview-over{opacity:1}
+.preview-wrap input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+
 .ctrl-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
 @media(max-width:600px){.ctrl-row{grid-template-columns:1fr}}
-
-/* Subject toggle */
 .field-label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--txt2);margin-bottom:8px}
+
 .subj-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.subj-btn{
-  background:var(--s2);border:1px solid var(--bd);border-radius:10px;
-  padding:12px 10px;cursor:pointer;transition:all .15s;text-align:center;
-  display:flex;flex-direction:column;align-items:center;gap:5px;
-}
+.subj-btn{background:var(--s2);border:1px solid var(--bd);border-radius:10px;padding:12px 8px;cursor:pointer;transition:all .15s;text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px}
 .subj-btn:hover{border-color:var(--bd2)}
 .subj-btn.active{background:rgba(192,132,252,.12);border-color:rgba(192,132,252,.5)}
-.subj-btn .si{font-size:22px}
-.subj-btn .sl{font-family:var(--mono);font-size:11px;color:var(--txt2);letter-spacing:.04em}
+.subj-btn .si{font-size:20px}
+.subj-btn .sl{font-family:var(--mono);font-size:11px;color:var(--txt2);letter-spacing:.03em}
 .subj-btn.active .sl{color:var(--acc)}
+.subj-desc{font-family:var(--mono);font-size:10px;color:var(--txt3);margin-top:8px;line-height:1.6;padding:8px 10px;background:var(--s2);border-radius:8px;border:1px solid var(--bd)}
 
-/* Notes */
-textarea{width:100%;background:var(--s2);border:1px solid var(--bd);border-radius:10px;color:var(--txt);font-family:var(--mono);font-size:12px;padding:11px 13px;outline:none;transition:border-color .2s;resize:vertical;min-height:72px;line-height:1.6;appearance:none}
+textarea{width:100%;background:var(--s2);border:1px solid var(--bd);border-radius:10px;color:var(--txt);font-family:var(--mono);font-size:12px;padding:11px 13px;outline:none;transition:border-color .2s;resize:vertical;min-height:88px;line-height:1.65;appearance:none}
 textarea:focus{border-color:var(--acc)}
+textarea::placeholder{color:var(--txt3)}
 
-/* Output type */
-.otype-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.otype-btn{font-family:var(--mono);font-size:11px;letter-spacing:.04em;padding:6px 13px;border-radius:8px;border:1px solid var(--bd);background:var(--s2);color:var(--txt2);cursor:pointer;transition:all .15s}
-.otype-btn:hover{border-color:var(--bd2);color:var(--txt)}
-.otype-btn.active{background:rgba(192,132,252,.12);border-color:rgba(192,132,252,.45);color:var(--acc)}
-
-/* Generate */
-.btn-gen{width:100%;background:linear-gradient(130deg,var(--acc),var(--acc2));color:#fff;border:none;border-radius:12px;font-family:var(--sans);font-size:15px;font-weight:700;letter-spacing:-.2px;padding:16px 24px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:transform .15s,box-shadow .15s,opacity .15s;box-shadow:0 5px 28px rgba(192,132,252,.22);margin-bottom:16px}
+.btn-gen{width:100%;background:linear-gradient(130deg,var(--acc),var(--acc2));color:#fff;border:none;border-radius:12px;font-family:var(--sans);font-size:15px;font-weight:700;letter-spacing:-.2px;padding:16px 24px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:transform .15s,box-shadow .15s;box-shadow:0 5px 28px rgba(192,132,252,.22);margin-bottom:16px}
 .btn-gen:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(192,132,252,.32)}
 .btn-gen:active{transform:translateY(0)}
-.btn-gen:disabled{opacity:.45;pointer-events:none}
+.btn-gen:disabled{opacity:.4;pointer-events:none;transform:none}
 .spark{font-size:18px;display:inline-block}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.spinning{animation:spin .8s linear infinite}
 
-/* Output card */
 .out-card{background:var(--s1);border:1px solid var(--bd);border-radius:14px;overflow:hidden}
-.out-head{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;border-bottom:1px solid var(--bd);background:var(--s2)}
+.out-head{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid var(--bd);background:var(--s2)}
 .out-title{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--txt2);display:flex;align-items:center;gap:7px}
-.dot-status{width:7px;height:7px;border-radius:50%;background:var(--txt3);transition:all .3s;flex-shrink:0}
-.dot-status.on{background:var(--acc3);box-shadow:0 0 7px var(--acc3)}
-.btn-copy{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;background:transparent;border:1px solid var(--bd2);color:var(--txt2);padding:6px 14px;border-radius:8px;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:5px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--txt3);transition:all .3s;flex-shrink:0}
+.dot.on{background:var(--acc3);box-shadow:0 0 7px var(--acc3)}
+.dot.loading{background:var(--acc4);box-shadow:0 0 7px var(--acc4);animation:blink .7s ease infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.btn-copy{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;background:transparent;border:1px solid var(--bd2);color:var(--txt2);padding:6px 14px;border-radius:8px;cursor:pointer;transition:all .15s}
 .btn-copy:hover{border-color:var(--acc3);color:var(--acc3)}
 .btn-copy.ok{border-color:var(--acc3);color:var(--acc3);background:rgba(52,211,153,.08)}
-.out-body{padding:24px 20px;min-height:160px}
-.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:120px;color:var(--txt3)}
-.empty .ei{font-size:34px;opacity:.3}
-.empty p{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-align:center;line-height:1.7}
-
-/* Prompt block */
-.pblock{display:none;font-family:var(--mono);font-size:12.5px;line-height:1.9;color:var(--txt);white-space:pre-wrap;word-break:break-word;background:var(--s2);border:1px solid var(--bd);border-radius:10px;padding:16px 18px;animation:fadeUp .3s ease}
-.pblock.show{display:block}
+.out-body{padding:22px 18px;min-height:180px}
+.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:140px;color:var(--txt3);text-align:center}
+.empty .ei{font-size:32px;opacity:.3}
+.empty p{font-family:var(--mono);font-size:12px;letter-spacing:.04em;line-height:1.8}
+.empty p.err{color:#f87171}
+.empty p.loading-txt{color:var(--acc4)}
+.pblock{display:none;font-family:var(--mono);font-size:12.5px;line-height:1.95;color:var(--txt);white-space:pre-wrap;word-break:break-word;background:var(--s2);border:1px solid var(--bd);border-radius:10px;padding:18px}
+.pblock.show{display:block;animation:fadeUp .3s ease}
 @keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-
-/* Local server info */
-.server-tip{background:rgba(52,211,153,.06);border:1px solid rgba(52,211,153,.2);border-radius:12px;padding:16px 18px;margin-bottom:14px}
-.server-tip-title{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc3);margin-bottom:8px}
-.server-tip p{font-family:var(--mono);font-size:12px;color:var(--txt2);line-height:1.7}
-.server-tip code{background:var(--s2);border:1px solid var(--bd);border-radius:5px;padding:1px 7px;color:var(--txt);font-size:12px}
 
 footer{margin-top:48px;text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:.07em;color:var(--txt3)}
 </style>
@@ -119,44 +118,42 @@ footer{margin-top:48px;text-align:center;font-family:var(--mono);font-size:10px;
   <div class="logo">
     <div class="logo-eye">AI Prompt Engineering Tool</div>
     <h1><em>Ref</em><span class="arr">→</span>Prompt Designer</h1>
-    <div class="logo-sub">Layout cloning · Identity preservation · Multi-model ready</div>
+    <div class="logo-sub">GPT-4o reads your Ref · outputs ready-to-use prompt</div>
   </div>
-  <span class="badge">v2.1 · Local</span>
+  <span class="badge">v5.2 · GPT-4o Powered</span>
 </header>
 
-<!-- Local server share tip -->
-<div class="server-tip">
-  <div class="server-tip-title">⚙ Share with teammates (local network)</div>
-  <p>
-    Put <code>index.html</code> and <code>start-server.bat</code> (Windows) or <code>start-server.sh</code> (Mac/Linux) in the same folder.<br>
-    Run the script → open <code id="localUrl">http://YOUR-IP:8080</code> from any device on the same network.<br>
-    Your IP is shown in the terminal after starting. Or run: <code>ipconfig</code> (Win) / <code>ifconfig</code> (Mac).
-  </p>
+<div class="api-bar">
+  <span class="api-label">OpenAI API Key</span>
+  <input class="api-input" type="password" id="apiKey" placeholder="sk-proj-..." autocomplete="off">
+  <button class="api-save" onclick="saveKey()">Save</button>
+  <span class="api-status" id="apiStatus">Not saved</span>
+  <a class="api-link" href="https://platform.openai.com/api-keys" target="_blank">↗ Get key</a>
 </div>
 
-<!-- Images -->
 <div class="upload-row">
   <div class="card">
     <div class="card-label"><span class="pill pill-ref"></span>Style Reference</div>
-    <div class="card-title">Ref Image</div>
+    <div class="card-title">Ref Image <span style="font-family:var(--mono);font-size:10px;color:var(--acc2);font-weight:400">Required</span></div>
+    <div class="card-sub">GPT-4o will analyze this to extract the visual style</div>
     <div class="zone" id="refZone">
       <input type="file" id="refInput" accept="image/*">
       <div class="zone-icon">🎨</div>
-      <div class="zone-hint"><strong>Drop or click</strong>Target layout &amp; style to clone</div>
+      <div class="zone-hint"><strong>Drop or click to upload</strong>The layout &amp; style to clone</div>
     </div>
   </div>
   <div class="card">
     <div class="card-label"><span class="pill pill-id"></span>Subject Identity</div>
-    <div class="card-title">Identity Image</div>
+    <div class="card-title">Identity Image <span style="font-family:var(--mono);font-size:10px;color:var(--txt3);font-weight:400">Optional</span></div>
+    <div class="card-sub">The person · animal · product to insert</div>
     <div class="zone" id="idZone">
       <input type="file" id="idInput" accept="image/*">
       <div class="zone-icon">🪪</div>
-      <div class="zone-hint"><strong>Drop or click</strong>Person · Animal · Product photo</div>
+      <div class="zone-hint"><strong>Drop or click to upload</strong>Upload to lock subject appearance</div>
     </div>
   </div>
 </div>
 
-<!-- Controls -->
 <div class="ctrl-row">
   <div class="card">
     <label class="field-label">Subject Type</label>
@@ -174,260 +171,244 @@ footer{margin-top:48px;text-align:center;font-family:var(--mono);font-size:10px;
         <span class="si">📦</span><span class="sl">ADD Product</span>
       </button>
     </div>
+    <div class="subj-desc" id="subjDesc">Lock: face structure, skin tone, hair color & length. Identity preserved. No face copy from Ref.</div>
   </div>
   <div class="card">
-    <label class="field-label">Output Format</label>
-    <div class="otype-row">
-      <button class="otype-btn active" data-val="collage" onclick="setType(this)">Collage</button>
-      <button class="otype-btn" data-val="portrait" onclick="setType(this)">Portrait</button>
-      <button class="otype-btn" data-val="i2v" onclick="setType(this)">I2V Motion</button>
-    </div>
-    <div style="margin-top:16px">
-      <label class="field-label">Scene Notes <span style="opacity:.45;font-style:normal;font-size:9px">optional</span></label>
-      <textarea id="notes" placeholder="e.g. add butterfly stickers · keep pearl frame · warmer expression · specific props..."></textarea>
-    </div>
+    <label class="field-label">Scene Notes <span style="opacity:.4;font-size:9px">optional</span></label>
+    <textarea id="notes" placeholder="e.g. add crown sticker · warmer smile · keep pearl necklace · brighter lighting..."></textarea>
   </div>
 </div>
 
-<!-- Generate -->
 <button class="btn-gen" id="genBtn" onclick="generate()">
-  <span class="spark">⚡</span> Generate Prompt
+  <span class="spark" id="sparkIcon">⚡</span> Generate Prompt
 </button>
 
-<!-- Output -->
 <div class="out-card">
   <div class="out-head">
     <div class="out-title">
-      <span class="dot-status" id="dot"></span>
+      <span class="dot" id="statusDot"></span>
       Final Prompt — Ready to Use
     </div>
     <button class="btn-copy" id="copyBtn" onclick="copyPrompt()">⎘ Copy</button>
   </div>
   <div class="out-body">
-    <div class="empty" id="emptyMsg">
+    <div class="empty" id="emptyState">
       <div class="ei">◈</div>
-      <p>Upload images · choose subject type<br>then click Generate Prompt</p>
+      <p id="emptyTxt">Enter API Key · Upload Ref Image · choose Subject Type<br>then click Generate Prompt</p>
     </div>
     <div class="pblock" id="pblock"></div>
   </div>
 </div>
 
-<footer>Ref-to-Prompt Designer · open source · no data sent · runs 100% locally</footer>
+<footer>API key stored in your browser only · routed via Vercel proxy · Ref-to-Prompt Designer</footer>
 </div>
 
 <script>
-// ─── State
 let subject = 'person';
-let outType = 'collage';
+let refB64 = null, refMime = null;
+let idB64  = null, idMime  = null;
+
+const subjDescs = {
+  person:  'Lock: face structure, eye shape, skin tone, hair color & length. Identity preserved. No face copy from Ref.',
+  animal:  'Lock: species, breed, fur color & pattern, eye color, facial markings — this specific individual.',
+  image:   'Lock: all physical features of the person or animal shown. Full appearance preserved.',
+  product: 'Lock: exact shape, color, branding, surface texture, material finish. Clearly identifiable.'
+};
+
+function saveKey() {
+  const v = document.getElementById('apiKey').value.trim();
+  if (!v.startsWith('sk-')) { setApiStatus('Invalid key format', 'err'); return; }
+  localStorage.setItem('oai_key', v);
+  setApiStatus('✓ Saved', 'ok');
+}
+function loadKey() {
+  const k = localStorage.getItem('oai_key');
+  if (k) { document.getElementById('apiKey').value = k; setApiStatus('✓ Saved', 'ok'); }
+}
+function getKey() {
+  return document.getElementById('apiKey').value.trim() || localStorage.getItem('oai_key') || '';
+}
+function setApiStatus(msg, type) {
+  const el = document.getElementById('apiStatus');
+  el.textContent = msg;
+  el.className = 'api-status' + (type ? ' ' + type : '');
+}
+loadKey();
 
 function setSubject(btn) {
   document.querySelectorAll('.subj-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   subject = btn.dataset.val;
-}
-function setType(btn) {
-  document.querySelectorAll('.otype-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  outType = btn.dataset.val;
+  document.getElementById('subjDesc').textContent = subjDescs[subject];
 }
 
-// ─── Upload
-function setupZone(zoneId, inputId) {
-  const zone = document.getElementById(zoneId);
+function setupZone(zoneId, inputId, isRef) {
+  const zone  = document.getElementById(zoneId);
   const input = document.getElementById(inputId);
   zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('over'); });
   zone.addEventListener('dragleave', () => zone.classList.remove('over'));
   zone.addEventListener('drop', e => {
     e.preventDefault(); zone.classList.remove('over');
-    if (e.dataTransfer.files[0]) loadImg(zone, e.dataTransfer.files[0]);
+    if (e.dataTransfer.files[0]) loadImg(zone, e.dataTransfer.files[0], isRef);
   });
-  input.addEventListener('change', () => { if (input.files[0]) loadImg(zone, input.files[0]); });
+  input.addEventListener('change', () => { if (input.files[0]) loadImg(zone, input.files[0], isRef); });
 }
-function loadImg(zone, file) {
+function loadImg(zone, file, isRef) {
   const fr = new FileReader();
   fr.onload = e => {
-    zone.innerHTML = `<div class="preview-box"><img src="${e.target.result}" alt="preview"><div class="preview-over">↺ Replace</div><input type="file" accept="image/*" style="position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%"></div>`;
-    zone.querySelector('input').addEventListener('change', ev => { if (ev.target.files[0]) loadImg(zone, ev.target.files[0]); });
+    const dataUrl = e.target.result;
+    if (isRef) { refB64 = dataUrl.split(',')[1]; refMime = file.type || 'image/jpeg'; }
+    else        { idB64  = dataUrl.split(',')[1]; idMime  = file.type || 'image/jpeg'; }
+    zone.innerHTML = `
+      <div class="preview-wrap">
+        <img src="${dataUrl}" alt="preview">
+        <div class="preview-over">↺ Replace</div>
+        <input type="file" accept="image/*">
+      </div>`;
+    zone.querySelector('input').addEventListener('change', ev => {
+      if (ev.target.files[0]) loadImg(zone, ev.target.files[0], isRef);
+    });
   };
   fr.readAsDataURL(file);
 }
-setupZone('refZone','refInput');
-setupZone('idZone','idInput');
+setupZone('refZone', 'refInput', true);
+setupZone('idZone',  'idInput',  false);
 
-// ─── Prompt builder
-function buildPrompt() {
+async function generate() {
+  const key = getKey();
+  if (!key) { showMsg('Please enter your OpenAI API key first.', 'err'); return; }
+  if (!refB64) { showMsg('Please upload a Ref Image first.', 'err'); return; }
+  setLoading(true);
+  try {
+    const prompt = await callProxy(key);
+    showPrompt(prompt);
+  } catch(e) {
+    showMsg('Error: ' + (e.message || 'Request failed. Check your API key.'), 'err');
+  } finally {
+    setLoading(false);
+  }
+}
+
+function setLoading(on) {
+  const btn  = document.getElementById('genBtn');
+  const icon = document.getElementById('sparkIcon');
+  const dot  = document.getElementById('statusDot');
+  btn.disabled = on;
+  icon.textContent = on ? '◌' : '⚡';
+  icon.className = on ? 'spark spinning' : 'spark';
+  dot.className = 'dot' + (on ? ' loading' : '');
+  if (on) {
+    document.getElementById('pblock').classList.remove('show');
+    document.getElementById('emptyState').style.display = 'flex';
+    const t = document.getElementById('emptyTxt');
+    t.textContent = 'GPT-4o is analyzing your Ref Image...';
+    t.className = 'loading-txt';
+  }
+}
+
+async function callProxy(key) {
   const notes = document.getElementById('notes').value.trim();
-  const hasRef = !!document.getElementById('refZone').querySelector('img');
-  const hasId  = !!document.getElementById('idZone').querySelector('img');
+  const messages = buildMessages(notes);
 
-  // Style block (from ref)
-  const styleBlock = hasRef
-    ? `[REF STYLE] Replicate the exact visual layout from the reference image: overall composition, frame positions, typography placement, sticker/decorative element positions, color palette, and background. Treat the reference as a locked template — reproduce its spatial structure faithfully.`
-    : `[STYLE] Y2K kawaii pink collage aesthetic: hot pink background, multi-portrait frames, 3D bubble-letter typography, bow and pearl sticker decorations, idol photocard finish.`;
+  const res = await fetch('/api/generate', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ apiKey: key, messages })
+  });
 
-  // Identity block (varies by subject type)
-  let identityBlock = '';
-
-  if (subject === 'person') {
-    identityBlock = hasId
-      ? `[IDENTITY — HUMAN] The person in the identity image is the sole subject across ALL portrait frames. Lock these biometric features as permanent constants: facial bone structure, eye shape and color, nose profile, lip shape, skin undertone, hair color, hair length and texture. The subject must be immediately recognizable as the same individual in every frame. Apply scene-appropriate makeup and styling without altering facial anatomy. Do NOT reference or copy any face from the reference image.`
-      : `[SUBJECT] A single person appears in all portrait frames. Consistent facial identity across all frames.`;
-  } else if (subject === 'animal') {
-    identityBlock = hasId
-      ? `[IDENTITY — ANIMAL] The animal in the identity image is the sole subject. Lock: species, breed, fur/coat color pattern, eye color, facial markings, ear shape, and any distinctive physical features. These characteristics must remain identical across all frames. Do not substitute a generic animal — this specific individual's appearance is fixed.`
-      : `[SUBJECT] A single animal subject appears in all frames. Consistent species, fur pattern, and physical features across all frames.`;
-  } else if (subject === 'image') {
-    identityBlock = hasId
-      ? `[IDENTITY — SUBJECT FROM IMAGE] The subject in the identity image (person or animal) appears in all frames. Preserve all distinguishing physical features exactly: face structure, coloration, markings, hair or fur texture, eye color. The subject must be recognizable as the same individual throughout. Do not borrow any physical traits from the reference image subject.`
-      : `[SUBJECT] The subject from the identity image appears consistently across all frames with fully preserved appearance.`;
-  } else if (subject === 'product') {
-    identityBlock = hasId
-      ? `[IDENTITY — PRODUCT] The product in the identity image is featured in the scene. Reproduce the product with exact visual fidelity: shape, color, logo/branding, surface texture, material finish, proportions. The product must be clearly identifiable as the same item — do not generalize or substitute. Place it naturally within the scene context while maintaining product accuracy.`
-      : `[PRODUCT] A specific product is featured in the scene. Accurate shape, color, and branding preserved.`;
-  }
-
-  // Main prompt by output type + subject
-  let mainPrompt = '';
-
-  if (outType === 'collage') {
-    if (subject === 'person') {
-      mainPrompt = `${styleBlock}
-
-${identityBlock}
-
-Create a Y2K kawaii princess photo collage poster. Portrait orientation (3:4). Solid hot pink background. Layout: one large central close-up portrait (face + upper chest, ~50% canvas width) and 4 smaller satellite portraits (upper-left, upper-right, lower-left, lower-right) — all showing the same person. Die-cut portrait edges, sharp composite. Decorations: 3D bubble-letter headline "Happy Princess" in deep pink with white extrusion, satin ribbon bows, pearl bead oval frame, crown/tiara graphic, sparkle glitter starbursts, heart gem stickers, pink teddy bear prop, Y2K flip-phone graphic. All frames: same identity, different poses and expressions (soft smile, hand-to-cheek, looking slightly sideways). Photorealistic portraits on graphic sticker background. 8K, commercial idol photocard quality.${notes ? `\n\nAdditional: ${notes}` : ''}`;
-
-    } else if (subject === 'animal') {
-      mainPrompt = `${styleBlock}
-
-${identityBlock}
-
-Create a Y2K kawaii animal photo collage poster. Portrait orientation (3:4). Solid hot pink background. Layout: one large central animal portrait and 4 smaller frames showing the same animal at different angles. Die-cut portrait edges. All frames show the same animal — identical markings, fur pattern, eye color. Decorations: 3D bubble-letter headline in deep pink, satin bows, pearl bead frames, sparkle glitter starbursts, heart gem stickers, crown graphic above center frame. Photorealistic animal portraits on graphic sticker background. 8K, vibrant, adorable Y2K aesthetic.${notes ? `\n\nAdditional: ${notes}` : ''}`;
-
-    } else if (subject === 'image') {
-      mainPrompt = `${styleBlock}
-
-${identityBlock}
-
-Create a Y2K kawaii photo collage poster. Portrait orientation (3:4). Solid hot pink background. Central large portrait and 4 satellite frames, all featuring the same subject from the identity image — preserved appearance across every frame. Die-cut portrait edges. Decorations: 3D bubble-letter headline in deep pink, satin bows, pearl frames, crown graphic, glitter starbursts, heart gems. Photorealistic subject composited onto graphic sticker background. 8K, idol photocard quality.${notes ? `\n\nAdditional: ${notes}` : ''}`;
-
-    } else if (subject === 'product') {
-      mainPrompt = `${styleBlock}
-
-${identityBlock}
-
-Create a Y2K kawaii product showcase collage. Portrait orientation (3:4). Solid hot pink background. Layout: one large central product hero shot and 3–4 supporting frames showing the product from different angles or in lifestyle context. Decorations: 3D bubble-letter brand/product name headline in deep pink, satin bows, pearl bead borders, sparkle glitters, heart gem accents. Product rendered with photorealistic accuracy and high-gloss finish. Background sticker layer in Y2K kawaii style. 8K, commercial product photography quality.${notes ? `\n\nAdditional: ${notes}` : ''}`;
-    }
-
-  } else if (outType === 'portrait') {
-    if (subject === 'person') {
-      mainPrompt = `${styleBlock}
-
-${identityBlock}
-
-Single close-up portrait photograph. Face centered, upper chest visible, slight angle. Soft warm smile, direct eye contact. Makeup: natural glamour — rosy cheeks, glossy pink lips, soft eye shadow. Hair: natural fall as per identity image. Outfit: simple white camisole top, optional pearl necklace. Lighting: soft frontal studio light, warm pink fill, even skin illumination. Background: solid hot pink (#FF69B4), flat. Optional faint sparkle scatter on background. Photorealistic, 8K, K-pop idol photocard quality.${notes ? `\n\nAdditional: ${notes}` : ''}`;
-
-    } else if (subject === 'animal') {
-      mainPrompt = `${styleBlock}
-
-${identityBlock}
-
-Single close-up animal portrait. Subject centered, face prominent. Alert, natural expression. Lighting: soft, even, studio-quality with warm fill. Background: solid hot pink (#FF69B4), flat. Optional pearl bead frame overlay, crown graphic above subject. Photorealistic, 8K, crisp fur/coat detail, vibrant Y2K aesthetic.${notes ? `\n\nAdditional: ${notes}` : ''}`;
-
-    } else if (subject === 'image') {
-      mainPrompt = `${styleBlock}
-
-${identityBlock}
-
-Single portrait of the subject from the identity image. Subject centered, natural expression. Preserve all physical features exactly. Lighting: soft studio, warm fill. Background: solid hot pink, flat. Photorealistic, 8K.${notes ? `\n\nAdditional: ${notes}` : ''}`;
-
-    } else if (subject === 'product') {
-      mainPrompt = `${styleBlock}
-
-${identityBlock}
-
-Single product hero shot. Product centered on solid hot pink background (#FF69B4). Clean studio lighting: soft box from upper left, subtle rim light, white highlight on product surface. Product rendered with exact shape, color, texture, and branding. Optional: small bow or pearl decoration prop beside product (not obscuring it). Photorealistic, 8K, commercial product photography.${notes ? `\n\nAdditional: ${notes}` : ''}`;
-    }
-
-  } else if (outType === 'i2v') {
-    if (subject === 'person') {
-      mainPrompt = `${styleBlock}
-
-${identityBlock}
-
-Starting from the completed collage still frame, animate to a seamless 4–6 second loop:
-• Portraits: gentle breathing (chest rise/fall), natural eye blink at ~2s and ~4s, hair micro-drift from soft air. Facial identity stable across all frames — no morphing.
-• Stickers: pearl bead strings sway (0.8s, 2° arc), satin bow ribbon flutter (1.2s loop), gem hearts pulse scale (1.0→1.05, 1.5s), glitter starbursts intermittent twinkle (3–5 active at any time).
-• Typography: subtle gloss sheen sweep on 3D letters (3s cycle).
-• Camera: locked, no movement.
-• Background: faint pearl iridescent shimmer cycle on pink.
-No identity drift between frames. Smooth motion interpolation. 24fps feel, seamless loop.${notes ? `\n\nAdditional: ${notes}` : ''}`;
-
-    } else if (subject === 'animal') {
-      mainPrompt = `${styleBlock}
-
-${identityBlock}
-
-Animate the completed animal collage to a 4–6 second seamless loop:
-• Animal portraits: ear flick, whisker twitch, slow blink, subtle fur ripple from gentle air. Consistent animal identity — no morphing or color shift between frames.
-• Stickers: bows flutter, glitter twinkle, gem hearts pulse.
-• Camera: locked, no movement.
-• Smooth, natural animal micro-movements. No uncanny motion. 24fps feel, seamless loop.${notes ? `\n\nAdditional: ${notes}` : ''}`;
-
-    } else if (subject === 'image') {
-      mainPrompt = `${styleBlock}
-
-${identityBlock}
-
-Animate the completed collage to a 4–6 second seamless loop. Subject micro-movements: breathing, blink, hair/fur drift. Sticker layer: bows flutter, gems pulse, glitter twinkle. Identity fully preserved — no facial drift. Camera locked. 24fps, seamless loop.${notes ? `\n\nAdditional: ${notes}` : ''}`;
-
-    } else if (subject === 'product') {
-      mainPrompt = `${styleBlock}
-
-${identityBlock}
-
-Animate the product showcase to a 4–6 second seamless loop:
-• Product: very slow rotation (0–15° arc, ping-pong), subtle surface light shimmer.
-• Decorations: bows flutter, glitter twinkle, pearl strings sway.
-• Camera: locked, no movement.
-• Product identity fully intact — no shape or color drift. 24fps, seamless loop.${notes ? `\n\nAdditional: ${notes}` : ''}`;
-    }
-  }
-
-  // Negative prompt (compact, appended)
-  const neg = `\n\nNEGATIVE PROMPT: wrong face, different person, identity drift, face blending from reference image, merged identities, extra limbs, deformed hands, bad anatomy, blurry, low quality, watermark, text artifact, style mismatch, inconsistent subject across frames.`;
-
-  return mainPrompt + neg;
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
+  return data.result || '';
 }
 
-// ─── Generate
-function generate() {
-  const btn = document.getElementById('genBtn');
-  btn.disabled = true;
-  btn.querySelector('.spark').textContent = '⟳';
-  setTimeout(() => {
-    btn.disabled = false;
-    btn.querySelector('.spark').textContent = '⚡';
-    const prompt = buildPrompt();
-    const pblock = document.getElementById('pblock');
-    const empty  = document.getElementById('emptyMsg');
-    pblock.textContent = prompt;
-    pblock.classList.remove('show');
-    pblock.offsetHeight; // reflow for re-animation
-    pblock.classList.add('show');
-    empty.style.display = 'none';
-    document.getElementById('dot').classList.add('on');
-  }, 500);
+function buildMessages(notes) {
+  const userContent = [];
+
+  userContent.push({ type: 'text', text: 'REF IMAGE — analyze this as the visual style template to clone:' });
+  userContent.push({ type: 'image_url', image_url: { url: `data:${refMime};base64,${refB64}`, detail: 'high' } });
+
+  if (idB64) {
+    userContent.push({ type: 'text', text: 'IDENTITY IMAGE — the subject whose appearance must be locked and preserved:' });
+    userContent.push({ type: 'image_url', image_url: { url: `data:${idMime};base64,${idB64}`, detail: 'high' } });
+  }
+
+  userContent.push({ type: 'text', text: buildInstruction(notes) });
+
+  return [
+    { role: 'system', content: buildSystem() },
+    { role: 'user',   content: userContent }
+  ];
 }
 
-// ─── Copy
+function buildSystem() {
+  return `You are a professional AI image generation prompt engineer. You write precise, stable prompts compatible with Stable Diffusion, Midjourney, DALL-E 3, and Flux.
+
+Your task: carefully analyze the Ref Image, extract its complete visual DNA, then write a ready-to-use generation prompt that recreates that exact style while substituting the subject.
+
+Writing style — follow these successful examples as your format guide:
+
+EXAMPLE A (collage style):
+"Create a pink Y2K princess-themed scrapbook collage poster using the uploaded identity image as the main subject. Include multiple cutout portraits of the same subject: one large main close-up portrait centered, plus 4 smaller portrait frames arranged around it. Design it like a kawaii magazine cover with a dreamy and playful vibe. Use a bright solid pink background with layered graphic elements: stars, sparkles, pearl bead strings, hearts, and ribbon bows. Add decorative sticker frames, layered paper cutouts, and die-cut portrait edges. Include 3D bubble-letter headlines in deep pink with white highlight extrusion. Lighting: soft, dreamy, front-facing glow. Style: kawaii, Korean idol magazine, Y2K aesthetic, cute, glossy, highly detailed, 8K. NEGATIVE PROMPT: wrong face, identity drift, extra fingers, blurry, watermark, missing decorations."
+
+EXAMPLE B (portrait scene style):
+"Based on the provided identity image, place the subject in front of an open kitchen or sushi bar in a high-end Japanese restaurant. The subject faces the camera with a gentle, warm expression. The subject's appearance must closely match the uploaded image with strong likeness priority. Dressed in an elegant Japanese kimono. The subject holds a square wooden bento box containing an artistic food portrait resembling the subject's face. Lighting: bright, premium, warm cinematic. Style: photorealistic, high-end editorial, ultra-detailed, 8K. NEGATIVE PROMPT: wrong face, distorted features, bad anatomy, blurry."
+
+Rules:
+- Output ONLY the final prompt text. No explanation, no preamble, no headers, no markdown.
+- Describe exactly what you SEE in the Ref Image and encode those as reproduction rules.
+- Keep identity lock instructions concise but explicit.
+- End with a compact NEGATIVE PROMPT line.
+- Max 300 words. Every word must serve generation stability.
+- Write in English.`;
+}
+
+function buildInstruction(notes) {
+  const subjectMap = {
+    person:  `SUBJECT TYPE: Human person.\n- Closely match the identity image (if provided). Strong likeness priority.\n- Lock: facial bone structure, eye shape, skin undertone, hair color, length, texture.\n- Subtle beautification allowed but identity must stay recognizable.\n- CRITICAL: Do NOT copy any face from the Ref Image.`,
+    animal:  `SUBJECT TYPE: Animal.\n- Closely match the identity image (if provided).\n- Lock: species, breed, fur/coat color and pattern, eye color, facial markings, ear shape.\n- This specific individual — not a generic animal.\n- CRITICAL: Do NOT borrow animal features from the Ref Image.`,
+    image:   `SUBJECT TYPE: Subject from identity image (person or animal).\n- Preserve ALL distinguishing physical features: face, coloring, markings, hair/fur, eye color.\n- No drift, no blending with Ref Image subject.`,
+    product: `SUBJECT TYPE: Product from identity image.\n- Exact fidelity: shape, silhouette, color, branding/logo, surface texture, material finish.\n- Must be immediately recognizable as the same item.`
+  };
+
+  return `Write the final generation prompt now.
+
+Analyze the Ref Image: extract layout, composition, background, color palette, typography, decorative elements, lighting, mood, props. Encode these as style rules.
+
+${subjectMap[subject]}
+
+${notes ? `Additional requirements: ${notes}\n` : ''}Output ONLY the prompt. Nothing else.`;
+}
+
+function showPrompt(text) {
+  const pblock = document.getElementById('pblock');
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('statusDot').className = 'dot on';
+  pblock.textContent = text;
+  pblock.classList.remove('show');
+  pblock.offsetHeight;
+  pblock.classList.add('show');
+}
+
+function showMsg(msg, type) {
+  document.getElementById('emptyState').style.display = 'flex';
+  document.getElementById('pblock').classList.remove('show');
+  const t = document.getElementById('emptyTxt');
+  t.textContent = msg;
+  t.className = type || '';
+  if (type === 'err') {
+    setTimeout(() => {
+      t.textContent = 'Enter API Key · Upload Ref Image · choose Subject Type\nthen click Generate Prompt';
+      t.className = '';
+    }, 4000);
+  }
+}
+
 function copyPrompt() {
   const pblock = document.getElementById('pblock');
   if (!pblock.classList.contains('show')) return;
   navigator.clipboard.writeText(pblock.textContent).then(() => {
     const btn = document.getElementById('copyBtn');
-    btn.classList.add('ok');
-    btn.textContent = '✓ Copied!';
+    btn.classList.add('ok'); btn.textContent = '✓ Copied!';
     setTimeout(() => { btn.classList.remove('ok'); btn.textContent = '⎘ Copy'; }, 2000);
   });
 }
